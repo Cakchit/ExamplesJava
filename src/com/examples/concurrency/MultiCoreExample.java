@@ -24,7 +24,7 @@ public class MultiCoreExample {
         
         int cores = Runtime.getRuntime().availableProcessors();
         System.out.println("Available processor cores is "+cores);
-        
+
         Instant now = Instant.now(); // Start clock at now
         
         // Work Stealing Pool is new in Java 8
@@ -36,7 +36,7 @@ public class MultiCoreExample {
         
         // Populate the list of futures by submitting callables to the thread pool
         for(int i=0;i<cores;i++) {
-            futures.add(i,threadPool.submit(new Worker(i)));
+            futures.add(i,threadPool.submit(new Worker(i))); // non-blocking
         }
         
         Double avg = 0.0;
