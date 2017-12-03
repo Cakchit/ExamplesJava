@@ -45,7 +45,7 @@ public class MultiCoreExample {
             // while we block (wait) on one task to finish the others are still working
             avg += futures.get(i).get();
         }
-        System.out.println("Average is: "+avg/4);
+        System.out.println("Average is: "+avg/cores);
         
         Duration d = Duration.between(now, Instant.now());
         System.out.println("Time Taken: "+d); // Total time taken
