@@ -16,7 +16,7 @@ import java.util.concurrent.Future;
  * to average lists of random numbers.
  * Uses the Java 8's Executor service for a Work Stealing Pool to divy the
  * work onto the available processor cores.
- * Example was run on a 4 Core 2.6 GHz Intel i5 with 8GB of 1600MHz DDR3
+ * Example was run on a 8 Core 2.6 GHz Intel i7 with 16GB of 2133 LPDDR3
  * which takes around 14 seconds;
  */
 public class MultiCoreExample {
@@ -116,7 +116,7 @@ class Worker implements Callable<Double> {
         avg = collect.average();
 
         Duration d = Duration.between(now, Instant.now());
-        System.out.println(String.format("Worker %d done with average %f on %d numbers in %s seconds",workerId,avg,collect.count,d.toString()));
+        //System.out.println(String.format("Worker %d done with average %f on %d numbers in %s seconds",workerId,avg,collect.count,d.toString()));
         return avg;
     }
 }
